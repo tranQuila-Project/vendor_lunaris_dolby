@@ -11,10 +11,21 @@ hal_attribute_hwservice(hal_dms, hal_dms_hwservice)
 binder_call(hal_dms_client, hal_dms_server)
 binder_call(hal_dms_server, hal_dms_client)
 
+add_hwservice(hal_dms_server, hal_dms_hwservice)
+allow hal_dms_client hal_dms_hwservice:hwservice_manager find;
+
 hal_client_domain(hal_audio_default, hal_dms)
 hal_client_domain(mediacodec, hal_dms)
 
-allow hal_dms_default vendor_data_file:dir rw_dir_perms;
-allow hal_dms_default vendor_data_file:file create_file_perms;
+allow hal_dms_default vendor_data_file:dir { rw_dir_perms add_name remove_name };
+allow hal_dms_default vendor_data_file:file { create_file_perms unlink };
 
+binder_call(hal_dms_default, hal_audio_default)
+binder_call(hal_dms_default, platform_app)
+
+allow hal_dms_default property_socket:sock_file write;
+unix_socket_connect(hal_dms_default, property, init)
+get_prop(hal_dms_default, vendor_audio_prop)
 set_prop(hal_dms_default, vendor_audio_prop)
+
+allow hal_dms_default mediacodec:binder call;

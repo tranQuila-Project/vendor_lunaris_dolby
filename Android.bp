@@ -1,9 +1,8 @@
-//
-// Automatically generated file. DO NOT MODIFY
-//
+// SPDX-License-Identifier: Apache-2.0
 
 soong_namespace {
 }
+
 
 cc_prebuilt_library_shared {
     name: "libdapparamstorage_v3_6",

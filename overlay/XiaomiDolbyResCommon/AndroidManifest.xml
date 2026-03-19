@@ -9,5 +9,5 @@
     <overlay
         android:isStatic="true"
         android:priority="300"
-        android:targetPackage="co.aospa.dolby.xiaomi" />
+        android:targetPackage="org.lunaris.dolby" />
 </manifest>

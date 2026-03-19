@@ -46,7 +46,7 @@ blob_fixups: blob_fixups_user_type = {
 module = ExtractUtilsModule(
     'dolby',
     'oneplus',
-    device_rel_path='vendor/oneplus/dolby',
+    device_rel_path='vendor/lunaris/dolby',
     blob_fixups=blob_fixups,
 )
 

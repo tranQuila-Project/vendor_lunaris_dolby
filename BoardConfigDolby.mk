@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DOLBY_PATH := vendor/oneplus/dolby
+DOLBY_PATH := vendor/lunaris/dolby
 
 # Properties
 TARGET_ODM_PROP += $(DOLBY_PATH)/properties/odm.prop
