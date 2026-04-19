@@ -43,7 +43,7 @@ fun CreditsDialog(
 ) {
     val context = LocalContext.current
     
-    val repoUrl = "https://github.com/Pong-Development/hardware_dolby"
+    val repoUrl = "https://github.com/tranQuila-Project/vendor_lunaris_dolby"
     
     val mainContributors = listOf(
         Contributor(
@@ -62,6 +62,12 @@ fun CreditsDialog(
             name = "Kenway",
             githubUsername = "kenway214",
             contribution = "Base & Treble Changes, EQ Tuning",
+            isHighlighted = true
+        ),
+        Contributor(
+            name = "tranQuila",
+            githubUsername = "MrTopia",
+            contribution = "Adding per-device dolby state memory",
             isHighlighted = true
         )
     )
@@ -194,7 +200,7 @@ fun CreditsDialog(
                                         color = MaterialTheme.colorScheme.onPrimaryContainer
                                     )
                                     Text(
-                                        text = "hardware_dolby",
+                                        text = "vendor_lunaris_dolby",
                                         style = MaterialTheme.typography.bodySmall,
                                         color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.7f)
                                     )
