@@ -13,15 +13,21 @@ import android.media.AudioDeviceInfo
 import android.media.AudioManager
 import android.media.AudioPlaybackConfiguration
 import android.os.Handler
+import android.content.SharedPreferences
 import android.os.IBinder
 import android.util.Log
-
+import org.lunaris.dolby.DolbyConstants
 import org.lunaris.dolby.data.DeviceStateManager
 import org.lunaris.dolby.data.DolbyRepository
 
 class DolbyEffectService : Service() {
 
     private val audioManager by lazy { getSystemService(AudioManager::class.java) }
+    private val dolbyPrefs: SharedPreferences by lazy {
+        getSharedPreferences("dolby_prefs", Context.MODE_PRIVATE)
+    }
+    private val isDeviceStateMemoryEnabled: Boolean
+        get() = dolbyPrefs.getBoolean(DolbyConstants.PREF_DEVICE_STATE_MEMORY, false)
     private val handler = Handler()
     private lateinit var repository: DolbyRepository
     private lateinit var deviceStateManager: DeviceStateManager
@@ -35,10 +41,12 @@ class DolbyEffectService : Service() {
 
         override fun onAudioDevicesRemoved(removedDevices: Array<AudioDeviceInfo>) {
             Log.d(TAG, "Devices removed: ${removedDevices.map { it.productName }}")
-            removedDevices.forEach { device ->
-                val key = deviceStateManager.deviceKey(device)
-                Log.d(TAG, "Snapshotting state for removed device: $key")
-                deviceStateManager.saveSnapshot(key, repository)
+            if (isDeviceStateMemoryEnabled) {
+                removedDevices.forEach { device ->
+                    val key = deviceStateManager.deviceKey(device)
+                    Log.d(TAG, "Snapshotting state for removed device: $key")
+                    deviceStateManager.saveSnapshot(key, repository)
+                }
             }
             handleDeviceChange()
         }
@@ -60,9 +68,11 @@ class DolbyEffectService : Service() {
         val currentDevice = getCurrentOutputDevice()
         if (currentDevice != null) {
             previousActiveDevice = currentDevice
-            val key = deviceStateManager.deviceKey(currentDevice)
-            val restored = deviceStateManager.restoreSnapshot(key, repository)
-            if (!restored) {
+            if (isDeviceStateMemoryEnabled) {
+                val key = deviceStateManager.deviceKey(currentDevice)
+                val restored = deviceStateManager.restoreSnapshot(key, repository)
+                if (!restored) repository.applySavedState()
+            } else {
                 repository.applySavedState()
             }
         } else {
@@ -79,17 +89,24 @@ class DolbyEffectService : Service() {
         val oldDevice = previousActiveDevice
 
         if (oldDevice != null) {
-            val oldKey = deviceStateManager.deviceKey(oldDevice)
-            Log.d(TAG, "Saving snapshot for previous device: $oldKey")
-            deviceStateManager.saveSnapshot(oldKey, repository)
+            if (isDeviceStateMemoryEnabled) {
+                val oldKey = deviceStateManager.deviceKey(oldDevice)
+                Log.d(TAG, "Saving snapshot for previous device: $oldKey")
+                deviceStateManager.saveSnapshot(oldKey, repository)
+            }
         }
 
         if (newDevice != null) {
             val newKey = deviceStateManager.deviceKey(newDevice)
-            Log.d(TAG, "Restoring snapshot for new device: $newKey")
-            val restored = deviceStateManager.restoreSnapshot(newKey, repository)
-            if (!restored) {
-                Log.d(TAG, "First time device, applying saved state as base")
+            if (isDeviceStateMemoryEnabled) {
+                Log.d(TAG, "Restoring snapshot for new device: $newKey")
+                val restored = deviceStateManager.restoreSnapshot(newKey, repository)
+                if (!restored) {
+                    Log.d(TAG, "First time device, applying saved state as base")
+                    repository.applySavedState()
+                }
+            } else {
+                Log.d(TAG, "Device state memory disabled, applying saved state")
                 repository.applySavedState()
             }
             previousActiveDevice = newDevice
@@ -130,9 +147,11 @@ class DolbyEffectService : Service() {
 
     override fun onDestroy() {
         super.onDestroy()
-        previousActiveDevice?.let { device ->
-            val key = deviceStateManager.deviceKey(device)
-            deviceStateManager.saveSnapshot(key, repository)
+        if (isDeviceStateMemoryEnabled) {
+            previousActiveDevice?.let { device ->
+                val key = deviceStateManager.deviceKey(device)
+                deviceStateManager.saveSnapshot(key, repository)
+            }
         }
         audioManager.unregisterAudioDeviceCallback(audioDeviceCallback)
         audioManager.unregisterAudioPlaybackCallback(playbackCallback)

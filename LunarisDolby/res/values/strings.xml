@@ -171,4 +171,13 @@
     <string name="dolby_mid_enhancer">Mid enhancer</string>
     <string name="dolby_mid_level">Mid level</string>
     <string name="dolby_mid_enhancer_summary">Enhances mid-frequency sounds for clearer vocals and instruments</string>
+
+    <!-- Per-device state memory -->
+    <string name="device_state_memory_title">Per-device audio memory</string>
+    <string name="device_state_memory_summary">Remember Dolby settings for each audio device (headphones, speakers, Bluetooth)</string>
+    <string name="device_state_memory_conflict_toast">Per-app profiles disabled — incompatible with per-device memory</string>
+    <string name="device_state_memory_conflict_summary">⚠ Disabled while per-device memory is active — they conflict</string>
+    <string name="app_profile_conflict_toast">Per-device memory disabled — incompatible with per-app profiles</string>
+    <string name="app_profile_conflict_summary">⚠ Disabled while per-app profiles are active — they conflict</string>
+    <string name="device_state_memory_section_title">Audio Device Memory</string>
 </resources>
