@@ -15,6 +15,8 @@ import android.media.AudioPlaybackConfiguration
 import android.os.Handler
 import android.os.IBinder
 import android.util.Log
+
+import org.lunaris.dolby.data.DeviceStateManager
 import org.lunaris.dolby.data.DolbyRepository
 
 class DolbyEffectService : Service() {
@@ -22,16 +24,23 @@ class DolbyEffectService : Service() {
     private val audioManager by lazy { getSystemService(AudioManager::class.java) }
     private val handler = Handler()
     private lateinit var repository: DolbyRepository
+    private lateinit var deviceStateManager: DeviceStateManager
+    private var previousActiveDevice: AudioDeviceInfo? = null
 
     private val audioDeviceCallback = object : AudioDeviceCallback() {
         override fun onAudioDevicesAdded(addedDevices: Array<AudioDeviceInfo>) {
-            repository.updateSpeakerState()
-            repository.applySavedState()
+            Log.d(TAG, "Devices added: ${addedDevices.map { it.productName }}")
+            handleDeviceChange()
         }
 
         override fun onAudioDevicesRemoved(removedDevices: Array<AudioDeviceInfo>) {
-            repository.updateSpeakerState()
-            repository.applySavedState()
+            Log.d(TAG, "Devices removed: ${removedDevices.map { it.productName }}")
+            removedDevices.forEach { device ->
+                val key = deviceStateManager.deviceKey(device)
+                Log.d(TAG, "Snapshotting state for removed device: $key")
+                deviceStateManager.saveSnapshot(key, repository)
+            }
+            handleDeviceChange()
         }
     }
 
@@ -47,10 +56,71 @@ class DolbyEffectService : Service() {
     override fun onCreate() {
         super.onCreate()
         repository = DolbyRepository(this)
-        repository.applySavedState()
+        deviceStateManager = DeviceStateManager(this)
+        val currentDevice = getCurrentOutputDevice()
+        if (currentDevice != null) {
+            previousActiveDevice = currentDevice
+            val key = deviceStateManager.deviceKey(currentDevice)
+            val restored = deviceStateManager.restoreSnapshot(key, repository)
+            if (!restored) {
+                repository.applySavedState()
+            }
+        } else {
+            repository.applySavedState()
+        }
+
         audioManager.registerAudioDeviceCallback(audioDeviceCallback, handler)
         audioManager.registerAudioPlaybackCallback(playbackCallback, handler)
         Log.d(TAG, "Dolby effect service created")
+    }
+
+    private fun handleDeviceChange() {
+        val newDevice = getCurrentOutputDevice()
+        val oldDevice = previousActiveDevice
+
+        if (oldDevice != null) {
+            val oldKey = deviceStateManager.deviceKey(oldDevice)
+            Log.d(TAG, "Saving snapshot for previous device: $oldKey")
+            deviceStateManager.saveSnapshot(oldKey, repository)
+        }
+
+        if (newDevice != null) {
+            val newKey = deviceStateManager.deviceKey(newDevice)
+            Log.d(TAG, "Restoring snapshot for new device: $newKey")
+            val restored = deviceStateManager.restoreSnapshot(newKey, repository)
+            if (!restored) {
+                Log.d(TAG, "First time device, applying saved state as base")
+                repository.applySavedState()
+            }
+            previousActiveDevice = newDevice
+        } else {
+            repository.updateSpeakerState()
+            repository.applySavedState()
+            previousActiveDevice = null
+        }
+    }
+
+    private fun getCurrentOutputDevice(): AudioDeviceInfo? {
+        val devices = audioManager.getDevices(AudioManager.GET_DEVICES_OUTPUTS)
+
+        val priorityOrder = listOf(
+            AudioDeviceInfo.TYPE_BLUETOOTH_A2DP,
+            AudioDeviceInfo.TYPE_BLE_HEADSET,
+            AudioDeviceInfo.TYPE_BLE_SPEAKER,
+            AudioDeviceInfo.TYPE_BLE_BROADCAST,
+            AudioDeviceInfo.TYPE_BLUETOOTH_SCO,
+            AudioDeviceInfo.TYPE_WIRED_HEADPHONES,
+            AudioDeviceInfo.TYPE_WIRED_HEADSET,
+            AudioDeviceInfo.TYPE_USB_HEADSET,
+            AudioDeviceInfo.TYPE_USB_DEVICE,
+            AudioDeviceInfo.TYPE_BUILTIN_SPEAKER
+        )
+
+        for (type in priorityOrder) {
+            val device = devices.firstOrNull { it.type == type }
+            if (device != null) return device
+        }
+        return devices.firstOrNull()
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
@@ -60,6 +130,10 @@ class DolbyEffectService : Service() {
 
     override fun onDestroy() {
         super.onDestroy()
+        previousActiveDevice?.let { device ->
+            val key = deviceStateManager.deviceKey(device)
+            deviceStateManager.saveSnapshot(key, repository)
+        }
         audioManager.unregisterAudioDeviceCallback(audioDeviceCallback)
         audioManager.unregisterAudioPlaybackCallback(playbackCallback)
         handler.removeCallbacksAndMessages(null)
