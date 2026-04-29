@@ -171,4 +171,13 @@
     <string name="dolby_mid_enhancer">Orta frekans artırıcı</string>
     <string name="dolby_mid_level">Orta frekans seviyesi</string>
     <string name="dolby_mid_enhancer_summary">Net bir vokal ve enstrüman sesi için orta frekans aralıklarını artırır</string>
+
+    <!-- Per-device state memory -->
+    <string name="device_state_memory_title">Cihaz başına bellek</string>
+    <string name="device_state_memory_summary">Dolby ayarlarınızı her bir ses cihazı (Kulaklık, Hoparlör, Bluetooth) için kaydeder.</string>
+    <string name="device_state_memory_conflict_toast">Uygulama profilleri devre dışı bırakıldı — Mevcut Cihaz ayarlarıyla uyumsuz</string>
+    <string name="device_state_memory_conflict_summary">⚠ Mevcut cihaz ayarları etkinken kullanılamaz.</string>
+    <string name="app_profile_conflict_toast">Cihaz bellek özelliği devre dışı — Uygulama profilleriyle ile uyumsuz.</string>
+    <string name="app_profile_conflict_summary">⚠ Uygulama profilleri etkinken kullanılamaz.</string>
+    <string name="device_state_memory_section_title">Ses Cihazları Belleği</string>
 </resources>
