@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023-25 Paranoid Android
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+
+    <!-- Dolby Atmos -->
+    <string name="dolby_title">Dolby Atmos</string>
+    <string name="dolby_enable">Dolby Atmos を使用</string>
+    <string name="dolby_profile_title">プロファイルを選択</string>
+    <string name="dolby_preset">イコライザー</string>
+    <string name="dolby_off">オフ</string>
+    <string name="dolby_on">オン</string>
+    <string name="dolby_low">低</string>
+    <string name="dolby_medium">中</string>
+    <string name="dolby_high">高</string>
+    <string name="dolby_max">最大</string>
+    <string name="dolby_unknown">不明</string>
+    <string name="dolby_on_with_profile">オン (%1$s)</string>
+    <string name="dolby_category_settings">オーディオ調整</string>
+    <string name="dolby_category_adv_settings">詳細設定</string>
+    <string name="dolby_adv_settings_footer">高度な設定を表示するには、別のプロファイルを選択してください。</string>
+    <string name="dolby_bass_enhancer">低音エンハンサー</string>
+    <string name="dolby_bass_level">低音レベル</string>
+    <string name="dolby_bass_curve">低音カーブ</string>
+    <string name="dolby_bass_curve_balanced">バランス</string>
+    <string name="dolby_bass_curve_sub_boost">サブブースト</string>
+    <string name="dolby_bass_curve_punch">パンチ</string>
+    <string name="dolby_treble_enhancer">高音エンハンサー</string>
+    <string name="dolby_treble_level">高音レベル</string>
+    <string name="dolby_dialogue_enhancer">ダイアログエンハンサー</string>
+    <string name="dolby_spk_virtualizer">スピーカーサラウンドバーチャライザー</string>
+    <string name="dolby_hp_virtualizer">ヘッドホンサラウンドバーチャライザー</string>
+    <string name="dolby_volume_leveler">音量レベライザー</string>
+    <string name="dolby_bass_enhancer_summary">低周波数を強調してより深い低音を実現します</string>  
+    <string name="dolby_treble_enhancer_summary">高周波数を強調してよりクリアな高音を実現します</string>
+    <string name="dolby_dialogue_enhancer_summary">音声やセリフの明瞭度を向上させます</string>  
+    <string name="dolby_spk_virtualizer_summary">スピーカーでバーチャルサラウンドサウンドを作成します</string>  
+    <string name="dolby_hp_virtualizer_summary">ヘッドホンでバーチャルサラウンドサウンドを作成します</string>  
+    <string name="dolby_volume_leveler_summary">音量を均一化して一貫したリスニング体験を提供します</string>  
+    <string name="dolby_connect_headphones">ヘッドホンを接続してください</string>
+    <string name="dolby_reset_all">プロファイルをリセット</string>
+    <string name="dolby_reset_all_message">すべてのプロファイルがデフォルトにリセットされます。</string>
+    <string name="dolby_reset_all_toast">すべてのプロファイルを正常にリセットしました</string>
+    <string name="dolby_hp_virtualizer_dolby_strength">サラウンドバーチャライザーの強度</string>
+    <string name="dolby_dialogue_enhancer_dolby_strength">ダイアログエンハンサーの強度</string>
+    <string name="dolby_notification_listener_label">Dolby Atmos サービス</string>
+    <string name="loading">読み込み中...</string>
+
+    <!-- Dolby profiles -->
+    <string name="dolby_profile_dynamic">ダイナミック</string>
+    <string name="dolby_profile_video">映画 / ビデオ</string>
+    <string name="dolby_profile_music">音楽</string>
+    <string name="dolby_profile_game">ゲーム</string>
+    <string name="dolby_profile_work">仕事</string>
+    <string name="dolby_profile_casual">カジュアル</string>
+    <string name="dolby_profile_mood">ムード</string>
+
+    <!-- Dolby equalizer presets -->
+    <string name="dolby_preset_default">フラット (オフ)</string>
+    <string name="dolby_preset_rock">ロック</string>
+    <string name="dolby_preset_jazz">ジャズ</string>
+    <string name="dolby_preset_pop">ポップ</string>
+    <string name="dolby_preset_classical">クラシック</string>
+    <string name="dolby_preset_hiphop">ヒップホップ</string>
+    <string name="dolby_preset_blues">ブルース</string>
+    <string name="dolby_preset_electronic">エレクトロニック</string>
+    <string name="dolby_preset_country">カントリー</string>
+    <string name="dolby_preset_dance">ダンス</string>
+    <string name="dolby_preset_metal">メタル</string>
+    <string name="dolby_preset_acoustic">アコースティック</string>
+    <string name="dolby_preset_bass">低音ブースト</string>
+    <string name="dolby_preset_beats">ビーツ</string>
+    <string name="dolby_preset_clear">クリスタルクリア</string>
+    <string name="dolby_preset_deep">ディープ</string>
+    <string name="dolby_preset_dubstep">ダブステップ</string>
+    <string name="dolby_preset_hardstyle">ハードスタイル</string>
+    <string name="dolby_preset_movie">映画</string>
+    <string name="dolby_preset_rb">R&amp;B</string>
+    <string name="dolby_preset_vocal">ボーカルブースター</string>
+    <string name="dolby_preset_custom">カスタム</string>
+    <string name="equalizer">イコライザー</string>
+    <string name="advanced">詳細</string>
+    <string name="home">ホーム</string>
+
+    <!-- Dolby equalizer UI -->
+    <string name="dolby_geq_slider_label_gain">ゲイン</string>
+    <string name="dolby_geq_preset">プリセット</string>
+    <string name="dolby_geq_preset_name">プリセット名</string>
+    <string name="dolby_geq_new_preset">新しいプリセット</string>
+    <string name="dolby_geq_rename_preset">プリセットの名前を変更</string>
+    <string name="dolby_geq_delete_preset">プリセットを削除</string>
+    <string name="dolby_geq_delete_preset_prompt">このプリセットを削除しますか？</string>
+    <string name="dolby_geq_reset_gains">ゲインをリセット</string>
+    <string name="dolby_geq_reset_gains_prompt">このプリセットをデフォルトにリセットしますか？</string>
+    <string name="dolby_geq_preset_name_exists">そのプリセット名はすでに存在します！</string>
+    <string name="dolby_geq_preset_name_too_long">プリセット名が長すぎます！</string>
+    <string name="band_mode_mismatch">バンドモードの不一致</string>
+    <string name="frequency_response">周波数特性</string>
+    <string name="locked">ロック済み</string>
+    <string name="band_configuration">バンド構成</string>
+    <string name="choose_equalizer_precision">イコライザーの精度を選択: バンド数が多いほど詳細な調整が可能</string>
+
+    <!-- Dolby intelligent EQ -->
+    <string name="dolby_ieq">インテリジェントイコライザー</string>
+    <string name="dolby_balanced">バランス</string>
+    <string name="dolby_warm">ウォーム</string>
+    <string name="dolby_detailed">詳細</string>
+
+    <!-- Per-App Audio Profiles -->
+    <string name="app_profiles_title">アプリ別オーディオプロファイル</string>
+    <string name="app_profiles_desc">コンテンツの種類に合わせて最適なサウンドにするため、アプリごとに異なるオーディオプロファイルを割り当てます</string>
+    <string name="app_profiles_search_hint">アプリを検索...</string>
+    <string name="app_profiles_no_apps">アプリが見つかりません</string>
+    <string name="app_profiles_loading">アプリを読み込み中...</string>
+    <string name="app_profiles_clear_all">すべてのアプリプロファイルをクリア</string>
+    <string name="app_profiles_clear_all_message">すべてのアプリ別プロファイルの割り当てが削除されます。アプリはデフォルトのプロファイルを使用します。</string>
+    <string name="app_profiles_manage">アプリプロファイルの管理</string>
+    <string name="app_profiles_default">デフォルト</string>
+    <string name="app_profiles_assigned">割り当て済み: %1$s</string>
+    <string name="app_profiles_headphone_only">ヘッドホン / Bluetooth 接続時のみモード</string>
+    <string name="app_profiles_headphone_only_description">イヤホンまたは Bluetooth オーディオ機器が接続されている場合のみプロファイルを切り替えます</string>
+    <string name="app_profiles_permission_required">権限が必要です</string>
+    <string name="app_profiles_permission_required_details">実行中のアプリに基づいて自動的にプロファイルを切り替えるには、次の画面で「使用状況へのアクセス」権限を付与してください。</string>
+    <string name="app_profiles_grant_permission">権限を付与</string>
+    <string name="app_profiles_search_placeholder">アプリを検索...</string>
+    <string name="app_profiles_no_apps_found">アプリが見つかりません</string>
+    <string name="app_profiles_retry">再試行</string>
+    <string name="app_profiles_change">変更</string>
+    <string name="app_profiles_auto_switch">プロファイルを自動切替</string>
+    <string name="app_profiles_show_toasts">トーストを表示</string>
+
+    <!-- Preset Import/Export -->
+    <string name="preset_import_export">プリセットのインポート / エクスポート</string>
+    <string name="preset_export_single">プリセットをエクスポート</string>
+    <string name="preset_import_single">プリセットをインポート</string>
+    <string name="preset_export_batch">すべてのプリセットをエクスポート</string>
+    <string name="preset_import_batch">複数のプリセットをインポート</string>
+    <string name="preset_copy_clipboard">クリップボードにコピー</string>
+    <string name="preset_paste_clipboard">クリップボードから貼り付け</string>
+    <string name="preset_share">プリセットを共有</string>
+    <string name="preset_export_success">プリセットのエクスポートに成功しました</string>
+    <string name="preset_import_success">プリセットのインポートに成功しました</string>
+    <string name="preset_export_failed">エクスポートに失敗しました</string>
+    <string name="preset_import_failed">インポートに失敗しました</string>
+
+    <!-- Notification Access -->
+    <string name="notification_access_required">通知アクセスが必要です</string>
+    <string name="notification_access_required_desc">Dolby Atmos をバックグラウンドで稼働させ、自動プロファイル切り替えを有効にするには、通知アクセスを有効にしてください。</string>
+    <string name="enable_notification_access">通知アクセスを有効化</string>
+    <string name="enable_notification_access_desc">Dolby Atmos をバックグラウンドで稼働させ、自動プロファイル切り替えを有効にするには、通知アクセスを有効にしてください。</string>
+    <string name="notification_access_permission_details">この権限により、Dolby Atmos は次のことが可能になります:\n\n• バックグラウンドでの常時稼働\n• オーディオプロファイルの自動切替\n• フォアグラウンドアプリの監視\n\n通知内容が読み取られたり変更されたりすることはありません。</string>
+    <string name="open_settings">設定を開く</string>
+    <string name="cancel">キャンセル</string>
+
+    <!--import export -->
+    <string name="import_export_presets">プリセットのインポート / エクスポート</string>
+    <string name="import_presets">プリセットをインポート</string>
+    <string name="import_presets_description">ファイルまたはクリップボードからプリセットをインポートします</string>
+    <string name="import_single_file">単一ファイル</string>
+    <string name="import_batch">一括</string>
+    <string name="import_from_clipboard">クリップボードから</string>
+    <string name="your_custom_presets">カスタムプリセット</string>
+    <string name="processing">処理中...</string>
+    <string name="batch_export">一括エクスポート</string>
+    <string name="batch_export_description">%1$s 個すべてのカスタムプリセットを1つのファイルにエクスポートしますか？</string>
+    <string name="export_all">すべてエクスポート</string>
+
+    <!-- Dolby mid enhancer -->
+    <string name="dolby_mid_enhancer">中音エンハンサー</string>
+    <string name="dolby_mid_level">中音レベル</string>
+    <string name="dolby_mid_enhancer_summary">中周波数を強調してボーカルや楽器をよりクリアにします</string>
+
+    <!-- Per-device state memory -->
+    <string name="device_state_memory_title">デバイス別オーディオメモリ</string>
+    <string name="device_state_memory_summary">オーディオ機器（ヘッドホン、スピーカー、Bluetooth）ごとに Dolby の設定を記憶します</string>
+    <string name="device_state_memory_conflict_toast">アプリ別プロファイルが無効化されました — デバイス別メモリと競合します</string>
+    <string name="device_state_memory_conflict_summary">⚠ デバイス別メモリが有効な間は無効になります — 競合するため</string>
+    <string name="app_profile_conflict_toast">デバイス別メモリが無効化されました — アプリ別プロファイルと競合します</string>
+    <string name="app_profile_conflict_summary">⚠ アプリ別プロファイルが有効な間は無効になります — 競合するため</string>
+    <string name="device_state_memory_section_title">オーディオデバイスメモリ</string>
+
+    <!-- AutoEQ Profile -->
+    <string name="dolby_autoeq_title">AutoEQ プロファイルを適用</string>
+    <string name="dolby_autoeq_applied">%1$s の AutoEQ を適用しました</string>
+    <string name="dolby_autoeq_preset_name">AutoEQ: %1$s</string>
+    <string name="dolby_autoeq_search_hint">8,000件以上のプロファイルを検索...</string>
+    <string name="dolby_autoeq_currently_applied">適用中のプロファイル</string>
+    <string name="dolby_autoeq_clear">検索をクリア</string>
+    <string name="dolby_autoeq_search">検索</string>
+    <string name="dolby_autoeq_active">アクティブなプロファイル</string>
+    <string name="dolby_autoeq_selected">選択されたプロファイル</string>
+</resources>
