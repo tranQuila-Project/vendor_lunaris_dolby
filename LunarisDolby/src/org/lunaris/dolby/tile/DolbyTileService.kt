@@ -32,6 +32,9 @@ class DolbyTileService : TileService() {
             val enabled = repository.getDolbyEnabled()
             state = if (enabled) Tile.STATE_ACTIVE else Tile.STATE_INACTIVE
             subtitle = getProfileName()
+            stateDescription = getString(
+                if (enabled) R.string.dolby_tile_state_on else R.string.dolby_tile_state_off
+            )
             updateTile()
         }
     }

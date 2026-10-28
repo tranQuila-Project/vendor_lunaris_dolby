@@ -18,6 +18,10 @@
     <string name="dolby_max">Max</string>
     <string name="dolby_unknown">Unknown</string>
     <string name="dolby_on_with_profile">On (%1$s)</string>
+
+    <!-- Quick settings tile state; read aloud by screen readers -->
+    <string name="dolby_tile_state_on">On</string>
+    <string name="dolby_tile_state_off">Off</string>
     <string name="dolby_category_settings">Audio tuning</string>
     <string name="dolby_category_adv_settings">Advanced settings</string>
     <string name="dolby_adv_settings_footer">Choose a different profile to show advanced settings.</string>

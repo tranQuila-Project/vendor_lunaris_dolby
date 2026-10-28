@@ -17,6 +17,10 @@
     <string name="dolby_max">Максимум</string>
     <string name="dolby_unknown">Неизвестно</string>
     <string name="dolby_on_with_profile">Вкл (%1$s)</string>
+
+    <!-- Состояние плитки быстрых настроек; его читают экранные дикторы -->
+    <string name="dolby_tile_state_on">Включено</string>
+    <string name="dolby_tile_state_off">Выключено</string>
     <string name="dolby_category_settings">Настройка звука</string>
     <string name="dolby_category_adv_settings">Дополнительные настройки</string>
     <string name="dolby_adv_settings_footer">Выберите другой профиль, чтобы открыть дополнительные настройки.</string>
