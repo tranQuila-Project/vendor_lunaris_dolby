@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023-25 Paranoid Android
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+
+    <!-- Dolby Atmos -->
+    <string name="dolby_title">Dolby Atmos</string>
+    <string name="dolby_enable">Увімкнути Dolby Atmos</string>
+    <string name="dolby_profile_title">Виберіть профіль</string>
+    <string name="dolby_preset">Еквалайзер</string>
+    <string name="dolby_off">Вимк.</string>
+    <string name="dolby_on">Увімк.</string>
+    <string name="dolby_low">Низький</string>
+    <string name="dolby_medium">Середній</string>
+    <string name="dolby_high">Високий</string>
+    <string name="dolby_max">Максимум</string>
+    <string name="dolby_unknown">Невідомо</string>
+    <string name="dolby_on_with_profile">Увімк. (%1$s)</string>
+    <string name="dolby_category_settings">Налаштування звуку</string>
+    <string name="dolby_category_adv_settings">Додаткові налаштування</string>
+    <string name="dolby_adv_settings_footer">Виберіть інший профіль, щоб показати додаткові налаштування.</string>
+    <string name="dolby_bass_enhancer">Підсилення басів</string>
+    <string name="dolby_bass_level">Рівень басів</string>
+    <string name="dolby_bass_curve">Характер басів</string>
+    <string name="dolby_bass_curve_balanced">Збалансований</string>
+    <string name="dolby_bass_curve_sub_boost">Глибокий</string>
+    <string name="dolby_bass_curve_punch">Щільний</string>
+    <string name="dolby_treble_enhancer">Підсилення високих частот</string>
+    <string name="dolby_treble_level">Рівень високих частот</string>
+    <string name="dolby_dialogue_enhancer">Покращення мовлення</string>
+    <string name="dolby_spk_virtualizer">Об’ємний звук для динаміків</string>
+    <string name="dolby_hp_virtualizer">Об’ємний звук для навушників</string>
+    <string name="dolby_volume_leveler">Вирівнювання гучності</string>
+    <string name="dolby_bass_enhancer_summary">Підсилює низькі частоти для глибшого басу</string>
+    <string name="dolby_treble_enhancer_summary">Підсилює високі частоти для чіткішого звучання</string>
+    <string name="dolby_dialogue_enhancer_summary">Покращує розбірливість голосів і діалогів</string>
+    <string name="dolby_spk_virtualizer_summary">Створює ефект об’ємного звуку через динаміки</string>
+    <string name="dolby_hp_virtualizer_summary">Створює ефект об’ємного звуку в навушниках</string>
+    <string name="dolby_volume_leveler_summary">Вирівнює гучність для комфортного прослуховування</string>
+    <string name="dolby_connect_headphones">Підключіть навушники</string>
+    <string name="dolby_reset_all">Скинути профілі</string>
+    <string name="dolby_reset_all_message">Усі профілі буде скинуто до заводських налаштувань.</string>
+    <string name="dolby_reset_all_toast">Усі профілі успішно скинуто</string>
+    <string name="dolby_hp_virtualizer_dolby_strength">Інтенсивність об’ємного звуку</string>
+    <string name="dolby_dialogue_enhancer_dolby_strength">Інтенсивність покращення мовлення</string>
+    <string name="dolby_notification_listener_label">Служба Dolby Atmos</string>
+    <string name="loading">Завантаження…</string>
+
+    <!-- Dolby profiles -->
+    <string name="dolby_profile_dynamic">Динамічний</string>
+    <string name="dolby_profile_video">Кіно/Відео</string>
+    <string name="dolby_profile_music">Музика</string>
+    <string name="dolby_profile_game">Ігри</string>
+    <string name="dolby_profile_work">Робота</string>
+    <string name="dolby_profile_casual">Повсякденний</string>
+    <string name="dolby_profile_mood">Атмосферний</string>
+
+    <!-- Dolby equalizer presets -->
+    <string name="dolby_preset_default">Без обробки (вимк.)</string>
+    <string name="dolby_preset_rock">Рок</string>
+    <string name="dolby_preset_jazz">Джаз</string>
+    <string name="dolby_preset_pop">Поп</string>
+    <string name="dolby_preset_classical">Класика</string>
+    <string name="dolby_preset_hiphop">Хіп-хоп</string>
+    <string name="dolby_preset_blues">Блюз</string>
+    <string name="dolby_preset_electronic">Електроніка</string>
+    <string name="dolby_preset_country">Кантрі</string>
+    <string name="dolby_preset_dance">Танцювальний</string>
+    <string name="dolby_preset_metal">Метал</string>
+    <string name="dolby_preset_acoustic">Акустика</string>
+    <string name="dolby_preset_bass">Підсилення басів</string>
+    <string name="dolby_preset_beats">Beats</string>
+    <string name="dolby_preset_clear">Кришталево чистий</string>
+    <string name="dolby_preset_deep">Глибокий</string>
+    <string name="dolby_preset_dubstep">Дабстеп</string>
+    <string name="dolby_preset_hardstyle">Хардстайл</string>
+    <string name="dolby_preset_movie">Кіно</string>
+    <string name="dolby_preset_rb">R&amp;B</string>
+    <string name="dolby_preset_vocal">Підсилення вокалу</string>
+    <string name="dolby_preset_custom">Власний</string>
+    <string name="equalizer">Еквалайзер</string>
+    <string name="advanced">Додатково</string>
+    <string name="home">Головна</string>
+
+    <!-- Dolby equalizer UI -->
+    <string name="dolby_geq_slider_label_gain">Підсилення</string>
+    <string name="dolby_geq_preset">Пресет</string>
+    <string name="dolby_geq_preset_name">Назва пресета</string>
+    <string name="dolby_geq_new_preset">Новий пресет</string>
+    <string name="dolby_geq_rename_preset">Перейменувати пресет</string>
+    <string name="dolby_geq_delete_preset">Видалити пресет</string>
+    <string name="dolby_geq_delete_preset_prompt">Видалити цей пресет?</string>
+    <string name="dolby_geq_reset_gains">Скинути підсилення</string>
+    <string name="dolby_geq_reset_gains_prompt">Скинути цей пресет до налаштувань за замовчуванням?</string>
+    <string name="dolby_geq_preset_name_exists">Пресет із такою назвою вже існує!</string>
+    <string name="dolby_geq_preset_name_too_long">Назва пресета занадто довга!</string>
+    <string name="band_mode_mismatch">Невідповідність режиму смуг</string>
+    <string name="frequency_response">Частотна характеристика</string>
+    <string name="locked">Заблоковано</string>
+    <string name="band_configuration">Конфігурація смуг</string>
+    <string name="choose_equalizer_precision">Виберіть точність еквалайзера: більше смуг — точніше налаштування</string>
+
+    <!-- Dolby intelligent EQ -->
+    <string name="dolby_ieq">Інтелектуальний еквалайзер</string>
+    <string name="dolby_balanced">Збалансований</string>
+    <string name="dolby_warm">Теплий</string>
+    <string name="dolby_detailed">Детальний</string>
+
+    <!-- Per-App Audio Profiles -->
+    <string name="app_profiles_title">Аудіопрофілі для додатків</string>
+    <string name="app_profiles_desc">Призначайте окремим додаткам різні аудіопрофілі для оптимального звучання залежно від типу контенту</string>
+    <string name="app_profiles_search_hint">Пошук додатків…</string>
+    <string name="app_profiles_no_apps">Додатків не знайдено</string>
+    <string name="app_profiles_loading">Завантаження додатків…</string>
+    <string name="app_profiles_clear_all">Очистити всі профілі додатків</string>
+    <string name="app_profiles_clear_all_message">Усі призначення профілів для додатків буде видалено. Додатки використовуватимуть профіль за замовчуванням.</string>
+    <string name="app_profiles_manage">Керування профілями додатків</string>
+    <string name="app_profiles_default">За замовчуванням</string>
+    <string name="app_profiles_assigned">Призначено: %1$s</string>
+    <string name="app_profiles_headphone_only">Лише для навушників та Bluetooth</string>
+    <string name="app_profiles_headphone_only_description">Перемикати профілі лише тоді, коли підключено навушники або Bluetooth-аудіопристрої</string>
+    <string name="app_profiles_permission_required">Потрібен дозвіл</string>
+    <string name="app_profiles_permission_required_details">Щоб автоматично перемикати профілі залежно від активного додатка, надайте доступ до даних про використання на наступному екрані.</string>
+    <string name="app_profiles_grant_permission">Надати дозвіл</string>
+    <string name="app_profiles_search_placeholder">Пошук додатків…</string>
+    <string name="app_profiles_no_apps_found">Додатків не знайдено</string>
+    <string name="app_profiles_retry">Повторити</string>
+    <string name="app_profiles_change">Змінити</string>
+    <string name="app_profiles_auto_switch">Автоперемикання профілів</string>
+    <string name="app_profiles_show_toasts">Показувати спливаючі сповіщення</string>
+
+    <!-- Preset Import/Export -->
+    <string name="preset_import_export">Імпорт та експорт пресетів</string>
+    <string name="preset_export_single">Експортувати пресет</string>
+    <string name="preset_import_single">Імпортувати пресет</string>
+    <string name="preset_export_batch">Експортувати всі пресети</string>
+    <string name="preset_import_batch">Імпортувати кілька пресетів</string>
+    <string name="preset_copy_clipboard">Копіювати в буфер обміну</string>
+    <string name="preset_paste_clipboard">Вставити з буфера обміну</string>
+    <string name="preset_share">Поділитися пресетом</string>
+    <string name="preset_export_success">Пресет успішно експортовано</string>
+    <string name="preset_import_success">Пресет успішно імпортовано</string>
+    <string name="preset_export_failed">Помилка експорту</string>
+    <string name="preset_import_failed">Помилка імпорту</string>
+
+    <!-- Notification Access -->
+    <string name="notification_access_required">Потрібен доступ до сповіщень</string>
+    <string name="notification_access_required_desc">Надайте доступ до сповіщень, щоб Dolby Atmos працював у фоновому режимі та міг автоматично перемикати профілі.</string>
+    <string name="enable_notification_access">Надати доступ до сповіщень</string>
+    <string name="enable_notification_access_desc">Надайте доступ до сповіщень, щоб Dolby Atmos працював у фоновому режимі та міг автоматично перемикати профілі.</string>
+    <string name="notification_access_permission_details">Цей дозвіл дозволяє Dolby Atmos:\n\n• Безперервно працювати у фоновому режимі\n• Автоматично перемикати аудіопрофілі\n• Відстежувати активні додатки\n\nВаші сповіщення не читатимуться та не змінюватимуться.</string>
+    <string name="open_settings">Відкрити налаштування</string>
+    <string name="cancel">Скасувати</string>
+
+    <!--import export -->
+    <string name="import_export_presets">Імпорт та експорт пресетів</string>
+    <string name="import_presets">Імпортувати пресети</string>
+    <string name="import_presets_description">Імпорт пресетів із файлів або буфера обміну</string>
+    <string name="import_single_file">Один файл</string>
+    <string name="import_batch">Пакетний імпорт</string>
+    <string name="import_from_clipboard">З буфера обміну</string>
+    <string name="your_custom_presets">Ваші власні пресети</string>
+    <string name="processing">Обробка…</string>
+    <string name="batch_export">Пакетний експорт</string>
+    <string name="batch_export_description">Експортувати всі власні пресети (%1$s) в один файл?</string>
+    <string name="export_all">Експортувати все</string>
+
+    <!-- Dolby mid enhancer -->
+    <string name="dolby_mid_enhancer">Підсилення середніх частот</string>
+    <string name="dolby_mid_level">Рівень середніх частот</string>
+    <string name="dolby_mid_enhancer_summary">Підсилює середні частоти для чіткішого звучання вокалу та інструментів</string>
+
+    <!-- Per-device state memory -->
+    <string name="device_state_memory_title">Пам’ять налаштувань для пристроїв</string>
+    <string name="device_state_memory_summary">Запам’ятовувати налаштування Dolby окремо для кожного аудіопристрою (навушників, динаміків, Bluetooth)</string>
+    <string name="device_state_memory_conflict_toast">Профілі додатків вимкнено — несумісні з пам’яттю для пристроїв</string>
+    <string name="device_state_memory_conflict_summary">⚠ Вимкнено, поки активна пам’ять для пристроїв — виникає конфлікт</string>
+    <string name="app_profile_conflict_toast">Пам’ять для пристроїв вимкнено — несумісна з профілями додатків</string>
+    <string name="app_profile_conflict_summary">⚠ Вимкнено, поки активні профілі додатків — виникає конфлікт</string>
+    <string name="device_state_memory_section_title">Пам’ять аудіопристроїв</string>
+
+    <!-- AutoEQ Profile -->
+    <string name="dolby_autoeq_title">Застосувати профіль AutoEQ</string>
+    <string name="dolby_autoeq_applied">Застосовано профіль AutoEQ для %1$s</string>
+    <string name="dolby_autoeq_preset_name">AutoEQ: %1$s</string>
+    <string name="dolby_autoeq_search_hint">Пошук серед понад 8 000 профілів…</string>
+    <string name="dolby_autoeq_currently_applied">Застосовано зараз</string>
+    <string name="dolby_autoeq_clear">Очистити пошук</string>
+    <string name="dolby_autoeq_search">Пошук</string>
+    <string name="dolby_autoeq_active">Активний профіль</string>
+    <string name="dolby_autoeq_selected">Вибраний профіль</string>
+</resources>
+                                                       
